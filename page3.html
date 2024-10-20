@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jak działamy?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="how-it-works">
+        <h1>Jak działamy?</h1>
+        <div class="steps">
+            <div class="step">
+                <span class="icon">🚗</span>
+                <p><strong>Najpierw umówimy się na spotkanie.</strong> Jeśli interesuje Cię zastaw samochodu, możesz do nas zadzwonić o dowolnej porze dnia...</p>
+            </div>
+            <div class="step">
+                <span class="icon">🔄</span>
+                <p><strong>Umówimy się na spotkanie w uzgodnionym miejscu.</strong> Na miejscu...</p>
+            </div>
+            <!-- Add other steps here -->
+        </div>
+    </section>
+
+    <section class="quote-form">
+        <h2>Wycena swojego samochodu</h2>
+        <form id="car-quote-form" action="send_email.php" method="POST">
+          <label for="name">Imię i nazwisko:</label>
+          <input type="text" id="name" name="name" required>
+      
+          <label for="phone">Telefon:</label>
+          <input type="tel" id="phone" name="phone" required>
+      
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required>
+      
+          <label for="car-model">Marka i model samochodu:</label>
+          <input type="text" id="car-model" name="car_model" required>
+      
+          <label for="year">Rok produkcji:</label>
+          <input type="text" id="year" name="year" required>
+      
+          <label for="mileage">Ilość przejechanych km:</label>
+          <input type="text" id="mileage" name="mileage" required>
+      
+          <label for="value">Kwota:</label>
+          <input type="text" id="value" name="value" required>
+      
+          <label for="branch">Wybierz oddział:</label>
+          <input type="text" id="branch" name="branch" required>
+      
+          <button type="submit">Wyślij</button>
+      </form>
+      
+        
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
