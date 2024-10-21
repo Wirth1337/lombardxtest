@@ -83,224 +83,249 @@
  <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
     <input name="animation" type="hidden">
 
-
     <!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wyceń swój samochód</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f4f7f6;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        h2, h3 {
-            text-align: center;
-            color: #333;
-            font-weight: 500;
-        }
-
-        .steps {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin-bottom: 40px;
-        }
-
-        .step {
-            flex: 1;
-            min-width: 220px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            margin: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .step img {
-            width: 50px;
-            margin-bottom: 15px;
-        }
-
-        .step h3 {
-            color: #333;
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .step p {
-            font-size: 14px;
-            color: #555;
-        }
-
-        /* Form section */
-        .form-container {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: #333;
-        }
-
-        input[type="text"], input[type="tel"], input[type="email"] {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 16px;
-            box-sizing: border-box;
-        }
-
-        input[type="text"]:focus, input[type="tel"]:focus, input[type="email"]:focus {
-            border-color: #4CAF50;
-            outline: none;
-        }
-
-        button[type="submit"] {
-            width: 100%;
-            padding: 12px;
-            background-color: #e94b35;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        button[type="submit"]:hover {
-            background-color: #d34230;
-        }
-
-        .form-footer {
-            text-align: center;
-            margin-top: 20px;
-            color: #777;
-        }
-    </style>
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            emailjs.init("fBlK5o8RS1xi7vOLc"); // Replace with your EmailJS user ID
-        })();
-    </script>
-</head>
-<body>
-
-    <div class="container">
-        <h2>Jak działamy?</h2>
-        <div class="steps">
-            <div class="step">
-                <img src="https://img.icons8.com/ios-filled/50/000000/checked.png" alt="Spotkanie">
-                <h3>Najpierw umówmy się na spotkanie</h3>
-                <p>Umawiamy się w jednym z naszych punktów, aby wspólnie ocenić Twój pojazd. Przy wycenie bierzemy pod uwagę markę, model, wiek, stan techniczny, przebieg oraz bieżącą wartość na rynku.</p>
+    <html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wyceń swój samochód</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Roboto', sans-serif;
+                background-color: #f4f7f6;
+                margin: 0;
+                padding: 0;
+            }
+    
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 40px 20px;
+            }
+    
+            h2, h3 {
+                text-align: center;
+                color: #333;
+                font-weight: 500;
+            }
+    
+            .steps {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin-bottom: 40px;
+            }
+    
+            .step {
+                flex: 1;
+                min-width: 220px;
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 16px; /* Większe zaokrąglenie */
+                margin: 10px;
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Głębszy cień */
+                text-align: center;
+                transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animacja przy najechaniu */
+                display: flex;
+                flex-direction: column;
+                justify-content: center; /* Wyśrodkowanie w pionie */
+            }
+    
+            .step:hover {
+                transform: translateY(-10px); /* Unoszenie kafelka po hoverze */
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Zwiększenie cienia */
+            }
+    
+            .step img {
+                width: 60px; /* Większa ikona */
+                margin-bottom: 15px;
+                transition: transform 0.3s ease; /* Animacja przy ikonie */
+            }
+    
+            .step:hover img {
+                transform: scale(1.1); /* Powiększenie ikony */
+            }
+    
+            .step h3 {
+                color: #333;
+                font-size: 20px; /* Większa czcionka */
+                margin-bottom: 15px;
+            }
+    
+            .step p {
+                font-size: 15px; /* Większy tekst */
+                color: #555;
+                line-height: 1.6; /* Większy odstęp między liniami */
+            }
+    
+            /* Form section */
+            .form-container {
+                background-color: #fff;
+                padding: 40px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                max-width: 600px;
+                margin: 0 auto;
+            }
+    
+            label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: 500;
+                color: #333;
+            }
+    
+            input[type="text"], input[type="tel"], input[type="email"] {
+                width: 100%;
+                padding: 12px;
+                margin-bottom: 20px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                font-size: 16px;
+                box-sizing: border-box;
+            }
+    
+            input[type="text"]:focus, input[type="tel"]:focus, input[type="email"]:focus {
+                border-color: #4CAF50;
+                outline: none;
+            }
+    
+            button[type="submit"] {
+                width: 100%;
+                padding: 12px;
+                background-color: #e94b35;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                font-size: 16px;
+                cursor: pointer;
+                font-weight: bold;
+            }
+    
+            button[type="submit"]:hover {
+                background-color: #d34230;
+            }
+    
+            .form-footer {
+                text-align: center;
+                margin-top: 20px;
+                color: #777;
+            }
+    
+            /* Media Queries dla mniejszych ekranów */
+            @media (max-width: 768px) {
+                .steps {
+                    flex-direction: column;
+                    align-items: center;
+                }
+    
+                .step {
+                    max-width: 400px;
+                    width: 100%;
+                }
+            }
+        </style>
+        <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function() {
+                emailjs.init("fBlK5o8RS1xi7vOLc"); // Replace with your EmailJS user ID
+            })();
+        </script>
+    </head>
+    <body>
+    
+        <div class="container">
+            <h2>Autolombard</h2>
+            <div class="steps">
+                <div class="step">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/checked.png" alt="Spotkanie">
+                    <h3>Pierwsze spotkanie</h3>
+                    <p>Spotykamy się w jednym z naszych oddziałów, aby dokładnie ocenić Twój samochód. Nasza wycena uwzględnia markę, model, rocznik, stan techniczny, przebieg oraz aktualne ceny na rynku.</p>
+                </div>
+                <div class="step">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/car.png" alt="Wycenienie auta">
+                    <h3>Wycena pojazdu</h3>
+                    <p>To Ty ustalasz kwotę, którą chcesz uzyskać. My oferujemy pożyczki do 80% rynkowej wartości pojazdu, ale to, jaką sumę wybierzesz, zależy wyłącznie od Twoich preferencji.</p>
+                </div>
+                <div class="step">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/money.png" alt="Wartość">
+                    <h3>Twoja decyzja, ile potrzebujesz</h3>
+                    <p>Masz pełną kontrolę nad kwotą, którą chcesz uzyskać pod zastaw auta. Nasza oferta dostosowuje się do Twoich potrzeb finansowych.</p>
+                </div>
+                <div class="step">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/signing-a-document.png" alt="Podpisanie umowy">
+                    <h3>Podpisanie dokumentów</h3>
+                    <p>Po uzgodnieniu kwoty przechodzimy do formalności i podpisania umowy. Ty wybierasz, czy chcesz zatrzymać auto, czy przekazać je na nasz bezpieczny parking.</p>
+                </div>
+                <div class="step">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/parking.png" alt="Przechowanie">
+                    <h3>Bezpieczne przechowanie pojazdu</h3>
+                    <p>Jeśli zdecydujesz się oddać auto do naszego depozytu, proces jest prosty, a opłata wynosi zaledwie 1%. Możesz też korzystać z pojazdu podczas trwania umowy, wtedy opłata wynosi 1,5%. Zadbamy również o ważne ubezpieczenie, jeśli jeszcze go nie masz.</p>
+                </div>
             </div>
-            <div class="step">
-                <img src="https://img.icons8.com/ios-filled/50/000000/car.png" alt="Wycenienie auta">
-                <h3>Umówimy się na wycenę</h3>
-                <p>To Ty decydujesz, jaką kwotę chcesz otrzymać. Możemy zaproponować Ci pożyczkę pod zastaw auta sięgającą nawet 80% jego wartości rynkowej. Oczywiście, możesz wnioskować o mniejszą kwotę – zależy to wyłącznie od Twoich preferencji.</p>
-            </div>
-            <div class="step">
-                <img src="https://img.icons8.com/ios-filled/50/000000/money.png" alt="Wartość">
-                <h3>Ty decydujesz ile chcesz zyskać</h3>
-                <p>Proponujemy Ci zastaw samochodu, a wszystko zależy od Twoich potrzeb.</p>
-            </div>
-            <div class="step">
-                <img src="https://img.icons8.com/ios-filled/50/000000/signing-a-document.png" alt="Podpisanie umowy">
-                <h3>Podpisujemy umowę</h3>
-                <p>Po uzgodnieniu kwoty przechodzimy do podpisania umowy. Pozostaje już tylko decyzja, czy chcesz dalej korzystać z auta, czy oddasz je na nasz monitorowany parking na czas trwania umowy.</p>
-            </div>
-            <div class="step">
-                <img src="https://img.icons8.com/ios-filled/50/000000/parking.png" alt="Przechowanie">
-                <h3>Opieka nad autem</h3>
-                <p>Jeśli zdecydujesz się oddać pojazd pod naszą opiekę, nie ma dodatkowych formalności – opłata manipulacyjna wynosi zaledwie 1%. W przypadku, gdy wolisz nadal użytkować samochód, opłata wzrośnie do 1,5%. Ważne, aby samochód miał ważne ubezpieczenie oraz komplet kluczy. Jeśli ubezpieczenia nie masz, pomożemy Ci załatwić je na miejscu.
-
-                  Po ustaleniu warunków umowy przystępujemy do jej podpisania i wypłaty gotówki. Samochód zostaje odstawiony na parking strzeżony na czas trwania umowy</p>
+    
+            <div class="form-container">
+                <h2>Wyceń swój samochód</h2>
+    
+                <form id="car-quote-form">
+                    <div class="form-field">
+                        <label for="name">Imię i nazwisko:</label>
+                        <input type="text" id="name" name="from_name" required>
+                    </div>
+    
+                    <div class="form-field">
+                        <label for="phone">Telefon:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+    
+                    <div class="form-field">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="user_email" required>
+                    </div>
+    
+                    <div class="form-field">
+                        <label for="car-model">Marka i model samochodu:</label>
+                        <input type="text" id="car-model" name="car_model" required>
+                    </div>
+    
+                    <div class="form-field">
+                        <label for="year">Rok produkcji:</label>
+                        <input type="text" id="year" name="year" required>
+                    </div>
+    
+                    <div class="form-field">
+                        <label for="mileage">Przebieg (km):</label>
+                        <input type="text" id="mileage" name="mileage" required>
+                    </div>
+    
+                    <div class="form-field">
+                        <label for="price">Cena:</label> <!-- Nowe pole "Cena" -->
+                        <input type="text" id="price" name="price" required>
+                    </div>
+    
+                    <button type="submit">Wyślij wycenę</button>
+                </form>
+    
+                <div class="form-footer">
+                    <p>Skontaktujemy się z Tobą w ciągu 24 godzin!</p>
+                </div>
             </div>
         </div>
-
-        <div class="form-container">
-            <h2>Wyceń swój samochód</h2>
-
-            <form id="car-quote-form">
-                <div class="form-field">
-                    <label for="name">Imię i nazwisko:</label>
-                    <input type="text" id="name" name="from_name" required>
-                </div>
-
-                <div class="form-field">
-                    <label for="phone">Telefon:</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-
-                <div class="form-field">
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="user_email" required>
-                </div>
-
-                <div class="form-field">
-                    <label for="car-model">Marka i model samochodu:</label>
-                    <input type="text" id="car-model" name="car_model" required>
-                </div>
-
-                <div class="form-field">
-                    <label for="year">Rok produkcji:</label>
-                    <input type="text" id="year" name="year" required>
-                </div>
-
-                <div class="form-field">
-                    <label for="mileage">Ilość przejechanych km:</label>
-                    <input type="text" id="mileage" name="mileage" required>
-                </div>
-
-                <button type="submit">Wyślij</button>
-            </form>
-
-            <div class="form-footer">
-                <p>Wypełnij formularz, aby otrzymać wycenę swojego samochodu</p>
-            </div>
-        </div>
-    </div>
-
-    <script type="text/javascript">
-        document.getElementById('car-quote-form').addEventListener('submit', function(event) {
-            event.preventDefault();  // Prevent default form submission
-            
-            // Send form data using EmailJS
-            emailjs.sendForm('service_wpjpvnu', 'template_d21efoi', this)
-                .then(function(response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                    alert('Wiadomość została wysłana pomyślnie!');
-                }, function(error) {
-                    console.log('FAILED...', error);
-                    alert('Wystąpił błąd podczas wysyłania wiadomości.');
-                });
-        });
-    </script>
-
-</body>
-</html>
-
-  </body>
-</html>
+    
+        <script type="text/javascript">
+            document.getElementById('car-quote-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+    
+                emailjs.sendForm('service_q8fl9kn', 'template_xxx', this)
+                    .then(function() {
+                        alert('Wycena została wysłana pomyślnie!');
+                    }, function(error) {
+                        alert('Ups! Coś poszło nie tak. Spróbuj ponownie.');
+                    });
+            });
+        </script>
+    
+    </body>
+    </html>
+    
